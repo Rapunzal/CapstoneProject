@@ -1,0 +1,39 @@
+<h2 style="text-align:center; color:blue">Medicare</h2>
+
+<div class="container col-md-6" style="margin: 0 auto 0 auto;">
+    <button class="btn btn-sm btn-primary" (click)="sortProduct()">SortByName</button>
+    <button class="btn btn-sm btn-primary" (click)="filterProduct()">Filter By Category</button>
+    
+<table class="table table-bordered">
+    <tr>
+        <th>Product Id</th>
+        <th>Product Name </th>
+        <th>Product Price</th>
+        <th>Product Url</th>
+        <th>Product category</th>
+        <th>Product quantity</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+<tr *ngFor="let product of productList">
+   <td> {{product.id}}</td>
+   <td> {{product.name}}</td>
+   <td> {{product.price}}</td>
+   <td> <img src="../../assets/{{product.url}}"  width="100" height="100"></td>
+   <td> {{product.category}}</td>
+   <td> {{product.quantity}}</td>
+   <td><button class="btn btn-sm btn-primary" (click)="updateProduct(product.id)">Update</button></td>
+   <td><button class="btn btn-sm btn-danger" (click)="deleteProduct(product.id)">Delete</button></td>
+</tr>
+</table>
+</div>
+
+<!--
+
+productId!: number;
+productName!: string;
+productPrice!: number;
+productUrl!: string;
+category!: string;
+quantity!: number;
+-->

@@ -1,0 +1,22 @@
+<h4>User List :</h4>
+<table class="table table-bordered">
+    <tr>
+        <th>User Id</th>
+        <th>User Name</th>
+        <th>User Password</th>
+        <th>User Email</th>
+        <th>User Password</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+    <tr *ngFor="let user of users">
+        <td>{{user.id}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.password}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.phone}}</td>
+        <td><button type="button" class="btn btn-sm btn-info" (click)="updateUser(user.id)">Update</button></td>
+        <td><button type="button" class="btn btn-sm btn-danger" (click)="deleteUser(user.id)">Delete</button></td>
+    </tr>
+</table>
+<button class="btn btn-primary" routerLink="/admin-page">Back to main admin page</button>

@@ -1,0 +1,29 @@
+
+
+<h3 style="text-align: center;color: blue;">Medicare</h3>
+
+
+
+<div class="row">
+<div class="container col-md-6">
+  <button class="btn btn-sm btn-primary" (click)="sortProduct()">SortByName</button>
+  <table class="table table-bordered col-md-8">
+      <tr>
+          <th>Product Name</th>
+          <th>Product Price</th>
+          <th>Product Url</th>
+          <th>Product Category</th>
+          <th>Product Quantity</th>
+          <th>Add to cart</th>
+      </tr>
+  <tr *ngFor="let product of products">
+     <td> {{product.name}}</td>
+     <td> {{product.price}}</td>
+     <td><img src="../../assets/{{product.url}}"  width="100" height="100"> </td>
+     <td> {{product.category}}</td>
+     <td> {{product.quantity}}</td>
+    
+     <td><button class="btn btn-sm btn-primary" (click)="addToCart(product.id)">AddToCart</button></td>
+  </tr>
+  </table>
+  </div>

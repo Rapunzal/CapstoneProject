@@ -1,0 +1,40 @@
+<p>cart works!</p>
+<button class="btn btn-primary" (click)="backToProduct()">Back to Product</button>
+<div class="row"> 
+    <div class="col-sm-6">
+<table class="table">
+    <tr>
+        <th>Id</th>
+        <th>Unit</th>
+       
+        <th>User id</th>
+        <th>Total Price</th>
+        <th>Increase/Decrease</th>
+        <th>Action</th>
+    </tr>
+    <tr *ngFor="let cart of carts">
+            <td>{{cart.cartId}}</td>
+           
+            <td>{{cart.product.name}}</td>
+            <td>{{cart.product.price}}</td>
+            <td>{{cart.totalPrice}}</td>
+            
+            <td>
+                <button class="btn btn-sm btn-primary" (click)="increaseQuantity(cart,cart.cartId)">+</button>{{cart.unit}}
+                <button class="btn btn-sm btn-primary" (click)="decreaseQuantity(cart,cart.cartId)">-</button>
+
+            </td>
+            <td>
+                <button class="btn btn-sm btn-danger" (click)="deleteCart(cart.cartId)">delete</button>
+            </td>
+    </tr>
+</table>
+</div>
+</div>
+<div>
+    <button class="btn btn-sm btn-primary" (click)="findTotal()">Total Amount</button>
+    Grand Total :{{grandTotal | currency}}
+</div>
+<div>
+    <button class="btn btn sm btn-primary" type="submit" (click)="payment()">Pay</button>
+</div>
